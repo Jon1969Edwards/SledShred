@@ -1,6 +1,8 @@
 {
   "name": "SledShred",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular",
   "id": "8c70ed18"
 }
