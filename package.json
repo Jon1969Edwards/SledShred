@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Jon1969Edwards/SledShred/issues"
   },
-  "homepage": "https://github.com/Jon1969Edwards/SledShred#readme"
+  "homepage": "https://github.com/Jon1969Edwards/SledShred#readme",
+  "dependencies": {
+    "cordova-plugin-ionic": "5.4.7"
+  }
 }
