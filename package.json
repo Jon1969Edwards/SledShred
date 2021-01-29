@@ -1,0 +1,24 @@
+{
+  "name": "sledshred",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "Balls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jon1969Edwards/SledShred.git"
+  },
+  "keywords": [
+    "Sledding",
+    "hill",
+    "finder"
+  ],
+  "author": "Jon1969Edwards",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jon1969Edwards/SledShred/issues"
+  },
+  "homepage": "https://github.com/Jon1969Edwards/SledShred#readme"
+}
