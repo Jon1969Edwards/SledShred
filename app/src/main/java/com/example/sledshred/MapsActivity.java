@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,11 +12,14 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
+        GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
+    private Marker marker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,19 +36,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng m1 = new LatLng(50, 50);
+        LatLng m1 = new LatLng(59.288465598655065, 18.007233473508);
 
 
-        mMap.addMarker(new MarkerOptions()
+        marker = mMap.addMarker(new MarkerOptions()
                 .position(m1)
                 .draggable(true)
-                .alpha(2)
-                .snippet("Eat a dick!")
-                // .icon(BitmapDescriptorFactory.fromResource(R.drawable.sled))
-                .title("m1"));
+                .title("marker 1")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.sled24px))
+
+        );
+
+        mMap.setOnMarkerClickListener(this);
 
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(m1));
+    }
+
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+
+        Toast.makeText(this, "Lat: " + marker.getPosition().latitude
+                        + " \nlng" +marker.getPosition().longitude
+
+                ,
+
+                Toast.LENGTH_LONG).show();
+
+        return false;
     }
 }
